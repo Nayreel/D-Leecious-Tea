@@ -15,16 +15,15 @@ const Card = () => {
         y: 0,
         rotation: 0,
         stagger: {
-          amount: 0.5,
           grid: [2, 1],
-          axis: 'y',
-          ease: 'circ.inOut',
-          from: 'edges',
+          axis: "y",
+          ease: "circ.inOut",
+          from: "edges",
         },
         scrollTrigger: {
-          trigger: ".box-content",
+          trigger: ".highlights-section",
           start: "top bottom",
-          end: "bottom top",
+          end: "bottom bottom",
           toggleActions: "play none none reverse",
         },
       }
@@ -38,16 +37,14 @@ const Card = () => {
         y: 600,
         rotation: 360,
         stagger: {
-          amount: 0.5,
           grid: [2, 1],
-          axis: 'y',
-          ease: 'circ.inOut',
-          from: 'edges',
+          axis: "y",
+          ease: "circ.inOut",
+          from: "edges",
         },
         scrollTrigger: {
-          trigger: ".box-content",
+          trigger: ".highlights-section",
           start: "bottom bottom",
-          end: "top top",
           toggleActions: "reverse none none play",
         },
       }
@@ -57,7 +54,10 @@ const Card = () => {
   return (
     <div className="box-content grid md:grid-cols-2 lg:grid-cols-4 w-full h-full gap-5">
       {specialty.map((special) => (
-        <div key={special.id} className="bg-brown rounded-lg p-2 stagger-box">
+        <div
+          key={special.id}
+          className="bg-brown rounded-lg p-2 stagger-box shadow-lg"
+        >
           <div className="card bg-brown p-10 border-2 border-brown-200 flex flex-col justify-center items-center rounded-lg h-full w-full">
             <img
               src={special.img}
