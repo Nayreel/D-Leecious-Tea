@@ -40,7 +40,7 @@ const Products = () => {
   return (
     <section
       id="products"
-      className="products-section w-screen overflow-hidden h-full common-padding bg-brown"
+      className="products-section nav-height w-screen overflow-hidden h-full common-padding bg-brown"
     >
       <div className="highlights-container screen-max-width">
         <div className="title-container mb-12 w-full items-end justify-between">
