@@ -1,5 +1,4 @@
 
-import search from "/assets/images/search.svg";
 import bag from "/assets/images/bag.svg";
 import milktea from "/assets/images/milktea-logo.svg";
 import bubbletea from "/assets/images/milktea.png";
@@ -15,8 +14,11 @@ import bubble from "/assets/images/bubbletea.jpg";
 import allseason from "/assets/images/allseason.jpg";
 import kiwi from "/assets/images/kiwi.jpg";
 import apple from "/assets/images/apple.jpg";
+import facebook from "/assets/images/facebook.svg";
+import instagram from "/assets/images/instagram.svg";
+import tiktok from "/assets/images/tiktok.svg";
+import twitter from "/assets/images/twitter.svg";
 
-export const searchImg = search;
 export const bagImg = bag;
 export const milkteaLogo = milktea;
 export const bubblemilktea = bubbletea;
@@ -32,3 +34,7 @@ export const bubbleImg = bubble;
 export const allseasonImg = allseason;
 export const kiwiImg = kiwi;
 export const appleImg = apple;
+export const facebookIcon = facebook;
+export const instagramIcon = instagram;
+export const tiktokIcon = tiktok;
+export const twitterIcon = twitter;

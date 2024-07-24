@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar"
 import Products from "./components/Products"
 import Store from "./components/Store"
 import Contact from "./components/Contact"
+import Footer from "./components/Footer"
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Products/>
       <Store/>
       <Contact/>
+      <Footer/>
     </main>
   )
 }
