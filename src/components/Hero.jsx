@@ -1,13 +1,24 @@
 import gsap from "gsap";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { bubblemilktea } from "../utils";
+import { useGSAP } from "@gsap/react";
 
 const Hero = () => {
   const scrollRef = useRef();
 
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
+  const handleSmoothScroll = (e) => {
+    e.preventDefault();
+    const targetElement = document.querySelector("#products");
+    if (targetElement) {
+      window.scrollTo({
+        top: targetElement.offsetTop,
+        behavior: 'smooth',
+      });
+    }
+  };
+
+  useGSAP(() => {
 
     gsap.to("#hero-title", { opacity: 1, delay: 0.5 });
     gsap.to("#hero-button", { opacity: 1, y: -50, delay: 0.5 });
@@ -50,7 +61,7 @@ const Hero = () => {
             id="hero-button"
             className="flex flex-col items-center opacity-0 translate-y-20 mt-10"
           >
-            <a href="#" className="btn">
+            <a href="#products" className="btn" onClick={(e) => handleSmoothScroll(e)} >
               Buy Now
             </a>
             <p className="font-normal text-xl">From ₱49 up to ₱149</p>

@@ -24,7 +24,7 @@ const Navbar = () => {
             <div
               key={i}
               className='nav-link px-5 text-sm lg:text-2xl cursor-pointer text-gray-300 hover:text-white transition-all'
-              onClick={(event) => handleSmoothScroll(event, nav.link)} // Add onClick handler
+              onClick={(e) => handleSmoothScroll(e, nav.link)} 
             >
               {nav.name}
             </div>
