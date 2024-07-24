@@ -11,6 +11,10 @@ import {
   allseasonImg,
   kiwiImg,
   appleImg,
+  facebookIcon,
+  instagramIcon,
+  twitterIcon,
+  tiktokIcon
 } from "../utils";
 
 export const navLists = [
@@ -133,10 +137,21 @@ export const stores = [
   },
 ];
 
-export const footerLinks = [
-  "Privacy Policy",
-  "Terms of Use",
-  "Sales Policy",
-  "Legal",
-  "Site Map",
-];
+export const socials = [
+  {
+    id: 0,
+    icon: facebookIcon,
+  },
+  {
+    id: 1,
+    icon: instagramIcon,
+  },
+  {
+    id: 2,
+    icon: tiktokIcon,
+  },
+  {
+    id: 3,
+    icon: twitterIcon
+  }
+]

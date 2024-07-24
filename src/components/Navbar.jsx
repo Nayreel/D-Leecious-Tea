@@ -1,4 +1,4 @@
-import { bagImg, milkteaLogo, searchImg } from '../utils';
+import { bagImg, milkteaLogo } from '../utils';
 import { navLists } from '../data/index.js';
 
 const Navbar = () => {
@@ -32,8 +32,7 @@ const Navbar = () => {
         </div>
 
         <div className='right-content flex items-baseline gap-7 max-sm:justify-end max-sm:flex-1'>
-          <img src={searchImg} alt='search' className='w-5 lg:w-10' />
-          <img src={bagImg} alt='cart' className='w-5 lg:w-10' />
+          <img src={bagImg} alt='cart' className='w-5 lg:w-10 cursor-pointer' />
         </div>
       </nav>
     </header>

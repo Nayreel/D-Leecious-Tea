@@ -50,17 +50,17 @@ const Store = () => {
   return (
     <section
       id="store"
-      className="store-section w-screen overflow-hidden h-full px-4 py-8 bg-brown-200"
+      className="store-section nav-height justify-center content-center w-screen overflow-hidden h-full px-4 py-8 bg-brown-200"
     >
       <div className="store-container max-w-screen-xl mx-auto flex flex-col lg:flex-row items-start lg:items-center justify-between lg:gap-8">
         <div className="info-container mb-12 w-full lg:w-1/2 text-center lg:text-left">
-          <h1 id="title" className="title section-heading text-brown mb-4 text-2xl lg:text-4xl">
+        <h1 id="title" className="title section-heading text-green-900">
             Our Locations
           </h1>
 
           <div
             id="location"
-            className="storename-container bg-brown-200 w-full opacity-0"
+            className="storename-container bg-brown-200 w-full opacity-0 mt-20"
           >
             {stores.map((store) => (
               <div
