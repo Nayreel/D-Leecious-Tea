@@ -7,65 +7,66 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Card = () => {
   useEffect(() => {
-    // Scroll Down Animation
+    // Modern stagger animation from bottom
     gsap.fromTo(
-      ".stagger-box",
-      { y: 600, rotation: 360 },
+      ".feature-card",
+      { 
+        y: 100, 
+        opacity: 0,
+        scale: 0.8
+      },
       {
         y: 0,
-        rotation: 0,
-        stagger: {
-          grid: [2, 1],
-          axis: "y",
-          ease: "circ.inOut",
-          from: "edges",
-        },
+        opacity: 1,
+        scale: 1,
+        duration: 0.8,
+        stagger: 0.15,
+        ease: "back.out(1.4)",
         scrollTrigger: {
-          trigger: ".highlights-section",
-          start: "top bottom",
-          end: "bottom bottom",
+          trigger: ".box-content",
+          start: "top 80%",
           toggleActions: "play none none reverse",
-        },
-      }
-    );
-
-    // Scroll Up Animation
-    gsap.fromTo(
-      ".stagger-box",
-      { y: 0, rotation: 0 },
-      {
-        y: 600,
-        rotation: 360,
-        stagger: {
-          grid: [2, 1],
-          axis: "y",
-          ease: "circ.inOut",
-          from: "edges",
-        },
-        scrollTrigger: {
-          trigger: ".highlights-section",
-          start: "bottom bottom",
-          toggleActions: "reverse none none play",
         },
       }
     );
   }, []);
 
   return (
-    <div className="box-content grid md:grid-cols-2 lg:grid-cols-4 w-full h-full gap-5">
-      {specialty.map((special) => (
+    <div className="box-content grid sm:grid-cols-2 lg:grid-cols-4 w-full h-full gap-6 lg:gap-8">
+      {specialty.map((special, index) => (
         <div
           key={special.id}
-          className="bg-brown rounded-lg p-2 stagger-box shadow-lg"
+          className="feature-card group relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-md rounded-2xl p-6 shadow-xl border border-white/20 hover:border-white/40 transition-all duration-500 hover:scale-105 hover:shadow-2xl cursor-pointer overflow-hidden"
         >
-          <div className="card bg-brown p-10 border-2 border-brown-200 flex flex-col justify-center items-center rounded-lg h-full w-full">
-            <img
-              src={special.img}
-              alt={special.img}
-              className="mb-4 w-12 h-auto"
-            />
-            <h1 className="text-2xl font-bold text-green">{special.title}</h1>
-            <p className="mt-5 text-start">{special.desc}</p>
+          {/* Animated gradient background on hover */}
+          <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+          
+          {/* Content */}
+          <div className="relative z-10 flex flex-col items-center text-center h-full">
+            {/* Icon container with animated background */}
+            <div className="relative mb-6">
+              <div className="absolute inset-0 bg-white/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+              <div className="relative w-20 h-20 flex items-center justify-center bg-white/10 rounded-full group-hover:bg-white/20 transition-all duration-500 group-hover:rotate-12">
+                <img
+                  src={special.img}
+                  alt={special.title}
+                  className="w-10 h-10 filter brightness-0 invert group-hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+            </div>
+            
+            {/* Title */}
+            <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-white transition-colors duration-300">
+              {special.title}
+            </h3>
+            
+            {/* Description */}
+            <p className="text-white/80 text-sm leading-relaxed group-hover:text-white/90 transition-colors duration-300">
+              {special.desc}
+            </p>
+
+            {/* Decorative corner element */}
+            <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-white/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           </div>
         </div>
       ))}

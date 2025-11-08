@@ -13,6 +13,9 @@ export default {
         },
         zinc: "#101010",
       },
+      fontFamily: {
+        sans: ['Poppins', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+      },
     },
   },
   plugins: [],
